@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -52,10 +52,10 @@
     {
       "@context": "https://schema.org",
       "@type": "EducationEvent",
-      "name": "Vedic Maths Summer Camp 2025",
+      "name": "Vedic Maths Summer Camp 2026",
       "description": "7-day intensive Vedic Mathematics workshop for school students from Class 5 to 10 and Intermediate.",
-      "startDate": "2025-04-01",
-      "endDate": "2025-05-31",
+      "startDate": "2026-04-01",
+      "endDate": "2026-05-31",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
       "location": {
@@ -1002,18 +1002,23 @@
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid #f0d7c6;
-      background:
-        linear-gradient(180deg, rgba(242, 107, 33, .18), rgba(11, 79, 138, .10)),
-        #fff5ec;
+      background: #0b2239; /* Darker background for 'contain' images */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .slide-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
       display: none;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .slide-image:hover {
+      transform: scale(1.02);
     }
 
     .slide-placeholder {
@@ -1123,6 +1128,51 @@
 
     .thumb.active {
       outline: 3px solid #ffd0b8
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, .92);
+      backdrop-filter: blur(10px);
+      display: none;
+      place-items: center;
+      padding: 40px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: grid;
+    }
+
+    .lightbox-content {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, .1);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, .2);
     }
 
     .performance-wrap {
@@ -1911,12 +1961,9 @@
           <h2>Help your child become <span>faster, calmer, and stronger</span> in Maths, Science, Computers, and more.
           </h2>
           <p>
-            Parents should not leave this website wondering what is taught.
-            They should instantly understand
-            <strong>what children learn</strong>,
-            <strong>how Vedic Maths improves marks across multiple subjects</strong>,
-            <strong>how much time can be saved through faster calculation and fewer errors</strong>,
-            and <strong>why learning from a Guinness World Record Holder creates both trust and aspiration</strong>.
+            Your child will learn how to think with numbers, not just how to remember steps.
+            Vedic Mathematics provides the structural foundation for fast calculation, fewer errors, and deep numerical
+            confidence that helps students excel across all metro city schools.
           </p>
 
           <div class="hero-actions">
@@ -2248,53 +2295,45 @@
                   </div>
                   <div class="learn-check"><i data-lucide="check-circle"
                       style="color:var(--green);width:18px;height:18px"></i>
-                    <div><strong>Confidence for future exams</strong>
-                      <div class="tiny">Students stop seeing numbers as a burden and start seeing them as manageable.
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="card">
-            <div class="eyebrow" style="margin-bottom:10px"><i data-lucide="star" style="width:16px;height:16px"></i>
-              Parent promise</div>
-            <h4 style="margin:0 0 10px;color:var(--secondary)">What families usually notice first</h4>
-            <div class="learn-checks">
-              <div class="learn-check"><i data-lucide="check-circle"
-                  style="color:var(--green);width:18px;height:18px"></i>
-                <div><strong>Homework takes less time</strong>
-                  <div class="tiny">Because arithmetic becomes smoother and less stop-start.</div>
-                </div>
-              </div>
-              <div class="learn-check"><i data-lucide="check-circle"
-                  style="color:var(--green);width:18px;height:18px"></i>
-                <div><strong>Children attempt more questions</strong>
-                  <div class="tiny">Confidence rises when the first few questions feel easier.</div>
-                </div>
-              </div>
-              <div class="learn-check"><i data-lucide="check-circle"
-                  style="color:var(--green);width:18px;height:18px"></i>
-                <div><strong>Board-exam fear begins to reduce</strong>
-                  <div class="tiny">Especially when students feel they can check themselves.</div>
-                </div>
-              </div>
-              <div class="learn-check"><i data-lucide="check-circle"
-                  style="color:var(--green);width:18px;height:18px"></i>
-                <div><strong>Science numericals stop feeling scary</strong>
-                  <div class="tiny">Because the arithmetic underneath them becomes manageable.</div>
-                </div>
+        <div class="card">
+          <div class="eyebrow" style="margin-bottom:10px"><i data-lucide="star" style="width:16px;height:16px"></i>
+            Parent promise</div>
+          <h4 style="margin:0 0 10px;color:var(--secondary)">What families usually notice first</h4>
+          <div class="learn-checks">
+            <div class="learn-check"><i data-lucide="check-circle"
+                style="color:var(--green);width:18px;height:18px"></i>
+              <div><strong>Homework takes less time</strong>
+                <div class="tiny">Because arithmetic becomes smoother and less stop-start.</div>
               </div>
             </div>
-
-            <div class="note">
-              <strong>Best website wording tip:</strong> say “your child will learn how to think with numbers, not just
-              how to remember steps.”
+            <div class="learn-check"><i data-lucide="check-circle"
+                style="color:var(--green);width:18px;height:18px"></i>
+              <div><strong>Children attempt more questions</strong>
+                <div class="tiny">Confidence rises when the first few questions feel easier.</div>
+              </div>
+            </div>
+            <div class="learn-check"><i data-lucide="check-circle"
+                style="color:var(--green);width:18px;height:18px"></i>
+              <div><strong>Board-exam fear begins to reduce</strong>
+                <div class="tiny">Especially when students feel they can check themselves.</div>
+              </div>
+            </div>
+            <div class="learn-check"><i data-lucide="check-circle"
+                style="color:var(--green);width:18px;height:18px"></i>
+              <div><strong>Science numericals stop feeling scary</strong>
+                <div class="tiny">Because the arithmetic underneath them becomes manageable.</div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -2304,13 +2343,12 @@
           <div>
             <span class="eyebrow"><i data-lucide="link" style="width:16px;height:16px"></i> Benefits Across
               Subjects</span>
-            <h3>How Vedic Maths helps children score better in many subjects, not just one</h3>
+            <h3>Vedic Mathematics is a multi-subject support tool, not a “maths-only trick class.”</h3>
           </div>
           <p>
-            This is the deep parent-understanding section.
-            If a child calculates faster and more accurately, that benefit appears in Maths first —
-            but it also spreads into Science, Social Studies with data/maps, Computers, Economics, and future
-            aptitude-based exams.
+            When a child calculates faster and more accurately, that benefit appears in Maths first —
+            but it also spreads into Physics, Chemistry, Social Studies, Computers, Economics, and future
+            competitive exam environments.
           </p>
         </div>
 
@@ -2372,8 +2410,7 @@
             <h4 style="margin:0 0 10px;color:var(--secondary)">Time saving + error reduction = better scoring
               opportunity</h4>
             <div class="muted" style="line-height:1.8">
-              The key website message is this:
-              <strong>Vedic Maths protects marks</strong> by reducing two common causes of score loss —
+              Vedic Maths protects marks by reducing two common causes of score loss —
               slow calculation and careless numerical mistakes.
               That is why the benefit spreads into multiple subjects and future exams.
             </div>
@@ -2517,10 +2554,7 @@
 
         <div style="margin-top:18px" id="icseList"></div>
 
-        <div class="note">
-          <strong>Important note:</strong> this page is designed to help parents understand that Vedic Mathematics is a
-          multi-subject support tool, not a “maths-only trick class.”
-        </div>
+
       </div>
     </section>
 
@@ -2634,14 +2668,14 @@
                 <div>
                   <div class="emoji" id="slideEmoji"><i data-lucide="mic"></i></div>
                   <h3 id="slideTitle" style="margin:0 0 6px">School Workshop & Seminar Sessions</h3>
-                  <div id="slideText" class="sub">Add many photos to showcase school events, classroom training, board
-                    workshops, and student interactions.</div>
+                  <div id="slideText" class="sub">Showcase a mix of stage talks, classroom close-ups, school workshops,
+                    and happy student interaction moments.</div>
                 </div>
               </div>
               <div class="slide-caption">
                 <strong id="captionTitle">School Workshop & Seminar Sessions</strong>
-                <div class="sub" id="captionText">Use this slider to show trainer sessions, board camps, parent
-                  orientations, and live class energy.</div>
+                <div id="captionText" class="sub">Trainer sessions, board camps, parent orientations, and live class
+                  energy.</div>
               </div>
             </div>
 
@@ -2658,10 +2692,7 @@
           </div>
         </div>
 
-        <div class="note">
-          <strong>Image strategy tip:</strong> upload a mix of stage talks, classroom close-ups, school workshops, happy
-          student interaction moments, and one or two parent-orientation photos.
-        </div>
+
       </div>
     </section>
 
@@ -2755,10 +2786,7 @@
           </div>
         </div>
 
-        <div class="note">
-          <strong>Best message for parents:</strong> Vedic Mathematics does not just help children solve faster — it
-          helps them keep more marks safe by reducing time pressure and careless calculation loss.
-        </div>
+
       </div>
     </section>
 
@@ -2901,7 +2929,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">🚀 Summer Camp 2025</span>
+            <span class="eyebrow">Summer Camp 2026</span>
             <h3>Course Curricula & Batch Schedule</h3>
           </div>
           <p>We follow a tiered progression. Start with Level-1 to build a strong foundation.</p>
@@ -3180,11 +3208,7 @@
           </div>
         </div>
 
-        <div class="note">
-          <strong>Additional features included:</strong> parent-first hero, Guinness record highlight, benefits across
-          many subjects, future exam readiness messaging, working slider, clickable sutra explorer, FAQ, booking
-          summary, CSV export, payload copy, and clickable social cards.
-        </div>
+
       </div>
     </section>
   </main>
@@ -3192,24 +3216,27 @@
   <footer>
     <div class="wrap">
       <div style="margin-bottom:14px">
-        <strong style="font-size:1.06rem">Vedic Maths Pro — Parent-First Single Page</strong>
-        <div class="tiny" style="color:#c6d7ee;margin-top:6px">
-          Includes working hero, trainer images, sliding gallery, CBSE and ICSE sections, cross-subject academic
-          benefits, future exam readiness, FAQ, booking, contact, and lead export.
-        </div>
+        <strong style="font-size:1.06rem">Vedic Maths Pro — Responsive single-page website for Vedic
+          Mathematics.</strong>
       </div>
       <div class="foot">
         <div class="tiny" style="color:#bed0ea; margin-bottom: 20px;">
           <strong>Serving Students Nationally:</strong> Bangalore • Delhi • Mumbai • Chennai • Hyderabad • Pune •
           Kolkata • Ahmedabad • Visakhapatnam • Pan-India Online Batches
         </div>
-        <div class="tiny" style="color:#bed0ea">Designed as a responsive single-page website for preview and
-          presentation.</div>
-        <div class="tiny" style="color:#bed0ea">Use verified credentials, real contact details, and final handles before
-          public launch.</div>
+        <div class="tiny" style="color:#bed0ea">© 2026 Vedic Maths Pro. All Rights Reserved. • Guinness World Record
+          Holder Dr. B. Sai Kiran</div>
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close Full View">
+      <i data-lucide="x" style="width:24px;height:24px"></i>
+    </button>
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Full view" />
+  </div>
 
   <a href="https://wa.me/918886206105?text=Hi%2C+I+want+to+know+about+the+Vedic+Maths+Summer+Camp"
     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
@@ -4045,6 +4072,23 @@
           resetAuto();
         });
       });
+
+      // --- Lightbox Integration ---
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const closeBtn = document.getElementById("closeLightbox");
+      const mainSlideImg = document.getElementById("slideImage");
+
+      mainSlideImg.addEventListener("click", () => {
+        if (mainSlideImg.src) {
+          lightboxImg.src = mainSlideImg.src;
+          lightbox.classList.add("active");
+        }
+      });
+
+      const hideLightbox = () => lightbox.classList.remove("active");
+      closeBtn.addEventListener("click", (e) => { e.stopPropagation(); hideLightbox(); });
+      lightbox.addEventListener("click", hideLightbox);
     }
 
     function nextSlide() {
@@ -4106,7 +4150,7 @@
     function getDatesForProgram(program) {
       const bookedDates = [];
       // April 1 - 13
-      const startB = new Date("2025-04-01");
+      const startB = new Date("2026-04-01");
       for (let i = 0; i < 13; i++) {
         const d = new Date(startB);
         d.setDate(startB.getDate() + i);
@@ -4121,7 +4165,7 @@
         // This implies demo is available while course is booked.
         // So for demo, only show April 5-15 as available.
         const available = [];
-        const startA = new Date("2025-04-05");
+        const startA = new Date("2026-04-05");
         for (let i = 0; i <= 10; i++) {
           const d = new Date(startA);
           d.setDate(startA.getDate() + i);
@@ -4133,11 +4177,11 @@
       } else {
         // Course start dates
         const available = [
-          new Date("2025-04-15"),
-          new Date("2025-04-24"),
-          new Date("2025-05-05"),
-          new Date("2025-05-15"),
-          new Date("2025-05-24")
+          new Date("2026-04-15"),
+          new Date("2026-04-24"),
+          new Date("2026-05-05"),
+          new Date("2026-05-15"),
+          new Date("2026-05-24")
         ].map(d => ({ date: d, booked: false }));
         return [...bookedDates, ...available];
       }
