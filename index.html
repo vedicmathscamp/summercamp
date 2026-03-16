@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,7 +29,7 @@
   <meta property="og:title" content="Vedic Maths Summer Camp | Dr. B. Sai Kiran | Guinness Record Holder">
   <meta property="og:description"
     content="Empower your child with Vedic Maths. Boost speed, confidence & board marks in CBSE/ICSE. Serving Bangalore, Delhi, Mumbai & beyond.">
-  <meta property="og:image" content="images/hero-trainer.jpg">
+  <meta property="og:image" content="images/trainer-portrait.jpg">
 
   <!-- Links & Scripts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Vedic Maths Pro",
-      "image": "https://vedicmathsguru.in/images/hero-trainer.jpg",
+      "image": "https://vedicmathsguru.in/images/trainer-portrait.jpg",
       "description": "Leading Vedic Mathematics training center by Guinness Record Holder Dr. B. Sai Kiran.",
       "address": {
         "@type": "PostalAddress",
@@ -381,6 +381,44 @@
 
     .overlay.show {
       display: block
+    }
+
+    .fab {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(242, 107, 33, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .fab:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 15px 30px rgba(242, 107, 33, 0.5);
+      color: #fff;
+    }
+
+    .fab i {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .fab {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 20px;
+        font-size: 0.9rem;
+      }
     }
 
     .hero {
@@ -1990,8 +2028,6 @@
           </p>
 
           <div class="hero-actions">
-            <button type="button" class="button" data-scroll="#booking"><i data-lucide="calendar"
-                style="width:18px;height:18px"></i> Book Free Demo</button>
             <button type="button" class="button-outline" data-scroll="#learn"><i data-lucide="target"
                 style="width:18px;height:18px"></i> What Your Child Will Learn</button>
             <button type="button" class="button-soft" data-scroll="#subjects"><i data-lucide="link"
@@ -2029,7 +2065,7 @@
         <div class="hero-side">
           <div class="hero-card mentor-hero">
             <div class="image-pane">
-              <div class="label-chip">Hero Trainer Image</div>
+              <div class="label-chip">Lead Mentor</div>
               <div class="upload-area">
                 <img src="images/trainer-portrait.jpg"
                   alt="Dr. B. Sai Kiran - Guinness World Record Holder and Vedic Mathematics Educator"
@@ -2038,7 +2074,7 @@
                   <div>
                     <div class="emoji"><i data-lucide="book-open"></i></div>
                     <strong>Hero Trainer Image</strong>
-                    <div>Add images/hero-trainer.jpg</div>
+                    <div>Add images/trainer-portrait.jpg</div>
                   </div>
                 </div>
               </div>
@@ -2046,7 +2082,7 @@
 
             <div class="mentor-info">
               <h3>Dr. B. Sai Kiran</h3>
-              <div class="mentor-sub">Guinness World Record Holder • Vedic Mathematics Educator</div>
+              <div class="mentor-sub">Guinness World Record Holder • Global Vedic Maths Ambassador</div>
               <div class="mentor-list">
                 <div class="mentor-item">
                   <span><i data-lucide="award"></i></span>
@@ -2102,6 +2138,94 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trainer" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow"><i data-lucide="award" style="width:16px;height:16px"></i> Global Authority in Mathematics</span>
+            <h3>Meet Your World-Record-Holding Mentor</h3>
+          </div>
+          <p>
+            Experience a legacy of world-record-breaking mentorship combined with 24 years of successful global training and intensive student workshops.
+          </p>
+        </div>
+
+        <div class="trainer-section">
+          <div class="card">
+            <h4 style="margin:0 0 12px;color:var(--secondary)">Lead Mentor</h4>
+            <div class="portrait-area">
+              <div class="label-chip">Dr. B. Sai Kiran</div>
+              <div class="upload-area">
+                <img src="images/trainer-portrait.jpg" alt="Dr. B. Sai Kiran Portrait"
+                  style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2;" />
+                <div class="placeholder" style="z-index:1;">
+                  <div>
+                    <div class="emoji"><i data-lucide="award"></i></div>
+                    <strong>Lead Mentor Photo</strong>
+                    <div>images/trainer-portrait.jpg</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:16px;background:#fff9f2">
+              <h4 style="margin:0 0 8px;color:var(--secondary)">About Your Mentor</h4>
+              <div class="muted" style="line-height:1.7; font-size: 0.95rem;">
+                <p><strong>Dr. B. Sai Kiran</strong> is a Guinness World Record holder, a luminary in the field of education, and a global ambassador of Vedic Mathematics. Serving as the President of the Telangana Vedic Maths Forum, he wears many hats: an Educational Psychologist, philanthropist, entrepreneur, and world-renowned trainer.</p>
+                <p>His contributions to memory training are equally illustrious—he holds a world record in Mnemonics for accomplishing a groundbreaking memory feat after 2,400 years, memorizing and flawlessly recalling 100 highly challenging words in just 12 minutes.</p>
+                <p>As the sole pioneer of a comprehensive Algebra course based entirely on Vedic Mathematics, Dr. Sai Kiran's impact is unparalleled, reaching over a million students worldwide and demystifying the complexities of mathematics.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-shell">
+            <div class="carousel-top">
+              <div>
+                <h4 style="margin:0;color:var(--secondary)">Legacy of Excellence</h4>
+                <div class="tiny">Global impact reaching over a million students through revolutionary workshops.</div>
+              </div>
+            </div>
+
+            <div class="carousel-frame">
+              <img id="slideImage" class="slide-image" alt="Session slide" />
+              <div id="slidePlaceholder" class="slide-placeholder">
+                <div>
+                  <div class="emoji" id="slideEmoji"><i data-lucide="mic"></i></div>
+                  <h3 id="slideTitle" style="margin:0 0 6px">Global Workshops & Seminars</h3>
+                  <div id="slideText" class="sub">Showcasing a legacy of stage talks, classroom sessions, and high-impact student interactions across the globe.</div>
+                </div>
+              </div>
+              <div class="slide-caption">
+                <strong id="captionTitle">Global Workshops & Seminars</strong>
+                <div id="captionText" class="sub">Revolutionary methodologies showcased on platforms like National Geographic Channel.</div>
+              </div>
+            </div>
+
+            <div class="carousel-controls">
+              <div class="control-row">
+                <button class="icon-btn" type="button" id="prevSlide">←</button>
+                <button class="icon-btn" type="button" id="nextSlide">→</button>
+                <button class="button-outline" type="button" id="toggleAuto">Pause Auto Slide</button>
+              </div>
+              <div class="dots" id="slideDots"></div>
+            </div>
+
+            <div class="thumbs" id="slideThumbs"></div>
+          </div>
+        </div>
+
+        <!-- Vision Narrative Section -->
+        <div class="card" style="margin-top:24px; border-left: 5px solid var(--primary); background: #fffcf8;">
+           <h4 style="color:var(--secondary); margin-bottom: 12px;"><i data-lucide="book-open" style="width:18px; height:18px; vertical-align:middle; margin-right:8px;"></i> A Message from the Mentor: Redefining Algebra</h4>
+           <div class="muted" style="line-height:1.8; font-size: 1rem;">
+             <p>For centuries, Algebra has bewildered the masses. Its abstract nature, dominated by alphanumerics and cryptic formulae, has made it one of the most misunderstood branches of mathematics. Much of modern algebra reduces learning to the memorization of formulae whose origins remain hidden.</p>
+             <p>In arithmetic, numbers are alive. They connect to everyday experiences—money, distance, time. Algebra, however, is frequently presented as an isolated domain, detached from reality. This systemic failure to communicate the purpose and beauty of algebra is why over 90% of people develop an aversion to mathematics.</p>
+             <p><strong>"The secrets I invite you to explore are not modern inventions, but ancient truths—the long-forgotten secrets of algebra where common sense meets mathematical brilliance."</strong></p>
+           </div>
         </div>
       </div>
     </section>
@@ -2633,89 +2757,7 @@
       </div>
     </section>
 
-    <section id="trainer" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow"><i data-lucide="image" style="width:16px;height:16px"></i> Expert Mentorship & Engaging Sessions</span>
-            <h3>Meet Your World-Record-Holding Mentor and See Our Dynamic Coaching</h3>
-          </div>
-          <p>
-            Experience a legacy of world-record-breaking mentorship combined with years of successful school workshops and intensive student training.
-          </p>
-        </div>
 
-        <div class="trainer-section">
-          <div class="card">
-            <h4 style="margin:0 0 12px;color:var(--secondary)">Lead Mentor</h4>
-            <div class="portrait-area">
-              <div class="label-chip">Dr. B. Sai Kiran</div>
-              <div class="upload-area">
-                <img src="images/trainer-portrait.jpg" alt="Dr. B. Sai Kiran Portrait"
-                  style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2;"
-                  onerror="this.style.display='none';" />
-                <div class="placeholder" style="z-index:1;">
-                  <div>
-                    <div class="emoji"><i data-lucide="award"></i></div>
-                    <strong>Main Trainer Photo</strong>
-                    <div>Add images/trainer-portrait.jpg</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card" style="margin-top:16px;background:#fff9f2">
-              <h4 style="margin:0 0 8px;color:var(--secondary)">About Your Mentor</h4>
-              <div class="muted" style="line-height:1.8">
-                <strong style="color:var(--text)">Dr. B. Sai Kiran</strong><br>
-                Guinness World Record Holder<br>
-                Vedic Mathematics educator, memory trainer, and board-focused academic mentor<br>
-                Programs for school students, parents, and teachers
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-shell">
-            <div class="carousel-top">
-              <div>
-                <h4 style="margin:0;color:var(--secondary)">Session Highlights</h4>
-                <div class="tiny">Vedic Maths in practice across Indian schools.</div>
-              </div>
-            </div>
-
-            <div class="carousel-frame">
-              <img id="slideImage" class="slide-image" alt="Session slide" />
-              <div id="slidePlaceholder" class="slide-placeholder">
-                <div>
-                  <div class="emoji" id="slideEmoji"><i data-lucide="mic"></i></div>
-                  <h3 id="slideTitle" style="margin:0 0 6px">School Workshop & Seminar Sessions</h3>
-                  <div id="slideText" class="sub">Showcase a mix of stage talks, classroom close-ups, school workshops,
-                    and happy student interaction moments.</div>
-                </div>
-              </div>
-              <div class="slide-caption">
-                <strong id="captionTitle">School Workshop & Seminar Sessions</strong>
-                <div id="captionText" class="sub">Trainer sessions, board camps, parent orientations, and live class
-                  energy.</div>
-              </div>
-            </div>
-
-            <div class="carousel-controls">
-              <div class="control-row">
-                <button class="icon-btn" type="button" id="prevSlide">←</button>
-                <button class="icon-btn" type="button" id="nextSlide">→</button>
-                <button class="button-outline" type="button" id="toggleAuto">Pause Auto Slide</button>
-              </div>
-              <div class="dots" id="slideDots"></div>
-            </div>
-
-            <div class="thumbs" id="slideThumbs"></div>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
 
     <section class="section">
       <div class="wrap">
@@ -4468,6 +4510,10 @@
       updatePayload();
     });
   </script>
+  <a href="#booking" class="fab" data-scroll="#booking">
+    <i data-lucide="calendar"></i>
+    Book Free Demo
+  </a>
 </body>
 
 </html>
