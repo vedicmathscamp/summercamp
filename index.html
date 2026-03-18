@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -1146,8 +1146,9 @@
 
     .dots {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap
+      gap: 6px;
+      justify-content: center;
+      margin: 10px 0;
     }
 
     .dot {
@@ -1164,18 +1165,39 @@
     }
 
     .thumbs {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      display: flex;
+      gap: 12px;
       padding: 0 16px 16px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) #f0f4f8;
+    }
+
+    .thumbs::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .thumbs::-webkit-scrollbar-track {
+      background: #f0f4f8;
+      border-radius: 10px;
+    }
+
+    .thumbs::-webkit-scrollbar-thumb {
+      background: #cbd5e0;
+      border-radius: 10px;
     }
 
     .thumb {
-      min-height: 72px;
-      border-radius: 14px;
+      flex: 0 0 100px;
+      height: 130px;
+      border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: #fff7ef;
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .thumb img {
@@ -1195,7 +1217,9 @@
     }
 
     .thumb.active {
-      outline: 3px solid #ffd0b8
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(242, 107, 33, 0.2);
+      transform: scale(0.95);
     }
 
     /* Lightbox Styles */
@@ -2245,13 +2269,14 @@
               </div>
             </div>
 
-            <div class="carousel-controls">
-              <div class="control-row">
-                <button class="icon-btn" type="button" id="prevSlide">←</button>
-                <button class="icon-btn" type="button" id="nextSlide">→</button>
-                <button class="button-outline" type="button" id="toggleAuto">Pause Auto Slide</button>
-              </div>
+            <div class="control-row">
+              <button class="icon-btn" type="button" id="prevSlide" title="Previous"><i
+                  data-lucide="chevron-left"></i></button>
               <div class="dots" id="slideDots"></div>
+              <button class="icon-btn" type="button" id="nextSlide" title="Next"><i
+                  data-lucide="chevron-right"></i></button>
+              <button class="icon-btn" type="button" id="toggleAuto" title="Pause/Play Auto Slide"><i
+                  data-lucide="pause"></i></button>
             </div>
 
             <div class="thumbs" id="slideThumbs"></div>
@@ -4190,6 +4215,12 @@
 
       // Re-attach listeners for new elements
       lucide.createIcons();
+
+      const activeThumb = slideThumbs.querySelector(".thumb.active");
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+
       slideDots.querySelectorAll("[data-dot]").forEach(btn => {
         btn.addEventListener("click", () => {
           currentSlide = Number(btn.dataset.dot);
@@ -4254,7 +4285,8 @@
     if (toggleAutoBtn) {
       toggleAutoBtn.addEventListener("click", () => {
         autoPlay = !autoPlay;
-        toggleAutoBtn.textContent = autoPlay ? "Pause Auto Slide" : "Resume Auto Slide";
+        toggleAutoBtn.innerHTML = autoPlay ? '<i data-lucide="pause"></i>' : '<i data-lucide="play"></i>';
+        lucide.createIcons();
         if (autoPlay) startAuto(); else clearInterval(autoTimer);
         showToast(autoPlay ? "Auto slide resumed" : "Auto slide paused");
       });
