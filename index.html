@@ -26,15 +26,16 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vedicmathsguru.in/">
-  <meta property="og:title" content="Vedic Maths Summer Camp | Dr. B. Sai Kiran | Guinness Record Holder">
+  <meta property="og:title" content="Vedic Maths Summer Camp | International Vedic Maths Council | Guinness Record">
   <meta property="og:description"
-    content="Empower your child with Vedic Maths. Boost speed, confidence & board marks in CBSE/ICSE. Serving Bangalore, Delhi, Mumbai & beyond.">
-  <meta property="og:image" content="images/trainer-portrait.jpg">
+    content="Empower your child with Vedic Mathematics at the International Vedic Maths Council. Boost speed and marks in CBSE/ICSE under Guinness Record mentorship.">
+  <meta property="og:image" content="images/ivmc-logo.jpg">
 
   <!-- Links & Scripts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@0.447.0/dist/umd/lucide.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- Schema.org JSON-LD for Local Business, Event and Course -->
   <script type="application/ld+json">
@@ -57,7 +58,7 @@
         "longitude": 78.4867
       },
       "url": "https://vedicmathsguru.in",
-      "telephone": "+918886206105",
+      "telephone": "+919441155774",
       "areaServed": ["Bangalore", "Delhi", "Mumbai", "Chennai", "Hyderabad", "Pune", "Kolkata", "Ahmedabad", "Surat", "Visakhapatnam"]
     },
     {
@@ -240,6 +241,20 @@
       border: 1px solid var(--line);
       padding: 10px 12px;
       font-size: .92rem;
+    }
+
+    .yellow-button {
+      background: #f4c030 !important;
+      color: #1d2433 !important;
+      box-shadow: 0 8px 20px rgba(244, 192, 48, 0.25) !important;
+      border: none;
+      border-radius: 12px !important;
+      transition: all 0.2s ease;
+    }
+
+    .yellow-button:hover {
+      background: #f6c845 !important;
+      transform: translateY(-1px);
     }
 
     .icon-btn {
@@ -1900,8 +1915,8 @@
           <img src="images/ivmc-logo.jpg" alt="IVMC Logo">
         </div>
         <div>
-          <h1>Vedic Maths Pro</h1>
-          <small>Dr. B. Sai Kiran • Guinness World Record Holder • CBSE • ICSE</small>
+          <h1>International Vedic Maths Council</h1>
+          <small>Global Authority in Vedic Mathematics • Dr. B. Sai Kiran</small>
         </div>
       </button>
 
@@ -3087,7 +3102,7 @@
             <h3>Securely Book Your Seat</h3>
           </div>
           <p>
-            Experience the power of Vedic Mathematics. Confirm your preferred slot below. 
+            Experience the power of Vedic Mathematics. Confirm your preferred slot below.
             Your information is kept secure and will only be used for course enrollment and WhatsApp verification.
           </p>
         </div>
@@ -3106,127 +3121,145 @@
             </div>
 
             <div class="row">
-              <div>
-                <label for="phoneInput">Phone / WhatsApp</label>
-                <input id="phoneInput" type="tel" placeholder="+91 88862 06105" />
-              </div>
-              <div>
-                <label for="emailInput">Email</label>
-                <input id="emailInput" type="email" placeholder="name@email.com" />
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="cityInput">City / Location</label>
-                <input id="cityInput" type="text" placeholder="Hyderabad / Online / City name" />
-              </div>
-              <div>
-                <label for="boardSelect">Board</label>
-                <select id="boardSelect">
-                  <option>CBSE</option>
-                  <option>ICSE</option>
-                  <option>Telangana SSC</option>
-                  <option>AP SSC</option>
-                  <option>Other State Board</option>
-                </select>
+              <label for="phoneInput">Phone / WhatsApp</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input id="phoneInput" type="tel" placeholder="+91 94411 55774" style="flex: 1;" />
+                <div
+                  style="display: flex; align-items: center; gap: 4px; background: #fff9f2; padding: 6px 8px; border: 1px solid var(--line); border-radius: 10px;">
+                  <input type="checkbox" id="nriCheck" style="width: 16px; height: 16px; cursor: pointer;">
+                  <label for="nriCheck"
+                    style="margin: 0; font-size: 0.8rem; cursor: pointer; color: var(--secondary);">NRI</label>
+                </div>
               </div>
             </div>
-
-            <div class="row">
-              <div>
-                <label for="classSelect">Class</label>
-                <select id="classSelect">
-                  <option>Class 5</option>
-                  <option>Class 6</option>
-                  <option>Class 7</option>
-                  <option>Class 8</option>
-                  <option>Class 9</option>
-                  <option selected>Class 10</option>
-                  <option>Class 11 / Inter 1st Year</option>
-                  <option>Class 12 / Inter 2nd Year</option>
-                  <option>Teacher / Parent / Others</option>
-                </select>
-              </div>
-              <div>
-                <label for="programSelect">Program</label>
-                <select id="programSelect">
-                  <option value="demo">Free Demo (30 Mins)</option>
-                  <option value="foundation">Master Course L1 (7 Days)</option>
-                  <option value="algebra">Vedic Algebra L1 (7 Days)</option>
-                </select>
-              </div>
+            <div>
+              <label for="emailInput">Email</label>
+              <input id="emailInput" type="email" placeholder="name@email.com" />
             </div>
-
-            <div class="row">
-              <div>
-                <label for="modeSelect">Mode</label>
-                <select id="modeSelect">
-                  <option>Online</option>
-                  <option>Offline</option>
-                  <option>Hybrid</option>
-                </select>
-              </div>
-              <div>
-                <label for="noteInput">Notes</label>
-                <input id="noteInput" type="text" placeholder="Weak in algebra / wants demo / parent attending" />
-              </div>
-            </div>
-
-            <div style="margin:14px 0 10px">
-              <label>Preferred Date</label>
-              <div id="dateGrid" class="slot-grid"></div>
-            </div>
-
-            <div style="margin:14px 0 10px">
-              <label>Preferred Time</label>
-              <div id="timeGrid" class="slot-grid"></div>
-            </div>
-
-            <button class="button" type="button" id="confirmBooking" style="width:100%;margin-top:8px">Confirm Demo
-              Booking</button>
-            <div class="success" id="bookingSuccess"></div>
           </div>
 
-          <div class="summary-card">
-            <h4 style="margin:0 0 12px;color:var(--secondary)">Booking Summary</h4>
-            <div class="summary-line"><span class="muted">Program</span><strong id="sumProgram">Free Demo</strong></div>
-            <div class="summary-line"><span class="muted">Board</span><strong id="sumBoard">CBSE</strong></div>
-            <div class="summary-line"><span class="muted">Class</span><strong id="sumClass">Class 10</strong></div>
-            <div class="summary-line"><span class="muted">Mode</span><strong id="sumMode">Online</strong></div>
-            <div class="summary-line"><span class="muted">Date</span><strong id="sumDate">Choose a date</strong></div>
-            <div class="summary-line"><span class="muted">Time</span><strong id="sumTime">Choose a time</strong></div>
-
-            <div class="card" style="margin-top:16px;background:#fff9f2">
-              <strong style="color:var(--secondary)">Contact details</strong>
-              <div class="contact-grid">
-                <div class="contact-box">
-                  <div style="font-size:1.5rem;color:var(--primary)"><i data-lucide="phone"></i></div>
-                  <strong>Phone</strong>
-                  <div class="tiny">+91 88862 06105</div>
-                  <button class="button-soft" type="button" data-copy="+91 88862 06105"
-                    style="margin-top:10px">Copy</button>
-                </div>
-                <div class="contact-box">
-                  <div style="font-size:1.5rem;color:var(--primary)"><i data-lucide="map-pin"></i></div>
-                  <strong>Location</strong>
-                  <div class="tiny">Hyderabad, Telangana, India</div>
-                  <button class="button-soft" type="button" data-copy="Hyderabad, Telangana, India"
-                    style="margin-top:10px">Copy</button>
-                </div>
-                <div class="contact-box">
-                  <div style="font-size:1.5rem;color:var(--primary)"><i data-lucide="mail"></i></div>
-                  <strong>Email</strong>
-                  <div class="tiny">vedicmathscamp.in@gmail.com</div>
-                  <button class="button-soft" type="button" data-copy="vedicmathscamp.in@gmail.com"
-                    style="margin-top:10px">Copy</button>
-                </div>
-              </div>
+          <div class="row">
+            <div>
+              <label for="cityInput">City / Location</label>
+              <input id="cityInput" type="text" placeholder="Hyderabad / Online / City name" />
             </div>
-
-
+            <div>
+              <label for="boardSelect">Board</label>
+              <select id="boardSelect">
+                <option>CBSE</option>
+                <option>ICSE</option>
+                <option>Telangana SSC</option>
+                <option>AP SSC</option>
+                <option>Other State Board</option>
+              </select>
+            </div>
           </div>
+
+          <div class="row">
+            <div>
+              <label for="classSelect">Class</label>
+              <select id="classSelect">
+                <option>Class 5</option>
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option selected>Class 10</option>
+                <option>Class 11 / Inter 1st Year</option>
+                <option>Class 12 / Inter 2nd Year</option>
+                <option>Teacher / Parent / Others</option>
+              </select>
+            </div>
+            <div>
+              <label for="programSelect">Program</label>
+              <select id="programSelect">
+                <option value="demo">Free Demo (30 Mins)</option>
+                <option value="foundation">Master Course L1 (7 Days)</option>
+                <option value="algebra">Vedic Algebra L1 (7 Days)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="modeSelect">Mode</label>
+              <select id="modeSelect">
+                <option>Online</option>
+                <option>Offline</option>
+                <option>Hybrid</option>
+              </select>
+            </div>
+            <div>
+              <label for="noteInput">Notes</label>
+              <input id="noteInput" type="text" placeholder="Weak in algebra / wants demo / parent attending" />
+            </div>
+          </div>
+
+          <div style="margin:14px 0 10px">
+            <label>Preferred Date</label>
+            <div id="dateGrid" class="slot-grid"></div>
+          </div>
+
+          <div style="margin:14px 0 10px">
+            <label>Preferred Time</label>
+            <div id="timeGrid" class="slot-grid"></div>
+          </div>
+
+          <div style="margin: 15px 0; display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" id="agreeContact" style="width: 20px; height: 20px; cursor: pointer;">
+            <label for="agreeContact"
+              style="margin: 0; font-weight: 800; font-size: 1.1rem; color: #1d2433; cursor: pointer;">I Agree To Be
+              Contacted By International Vedic Maths Council</label>
+          </div>
+
+          <div class="g-recaptcha" data-sitekey="6Leqko4sAAAAAM_GngW8YuIiBmGzE5jTeIYcgFUM" style="margin-bottom: 15px;">
+          </div>
+
+          <button class="button yellow-button" type="button" id="confirmBooking"
+            style="width:100%; margin-top:8px; font-weight: 800; font-size: 1.2rem; padding: 18px;">Get FREE Trial
+            Class</button>
+          <div class="success" id="bookingSuccess"></div>
         </div>
+
+        <div class="summary-card">
+          <h4 style="margin:0 0 12px;color:var(--secondary)">Booking Summary</h4>
+          <div class="summary-line"><span class="muted">Program</span><strong id="sumProgram">Free Demo</strong></div>
+          <div class="summary-line"><span class="muted">Board</span><strong id="sumBoard">CBSE</strong></div>
+          <div class="summary-line"><span class="muted">Class</span><strong id="sumClass">Class 10</strong></div>
+          <div class="summary-line"><span class="muted">Mode</span><strong id="sumMode">Online</strong></div>
+          <div class="summary-line"><span class="muted">Date</span><strong id="sumDate">Choose a date</strong></div>
+          <div class="summary-line"><span class="muted">Time</span><strong id="sumTime">Choose a time</strong></div>
+
+          <div class="card" style="margin-top:16px;background:#fff9f2">
+            <strong style="color:var(--secondary)">Contact details</strong>
+            <div class="contact-grid">
+              <div class="contact-box">
+                <div style="font-size:1.5rem;color:var(--primary)"><i data-lucide="phone"></i></div>
+                <strong>Phone</strong>
+                <div class="tiny">+91 94411 55774</div>
+                <button class="button-soft" type="button" data-copy="+91 94411 55774"
+                  style="margin-top:10px">Copy</button>
+              </div>
+              <div class="contact-box">
+                <div style="font-size:1.5rem;color:var(--primary)"><i data-lucide="map-pin"></i></div>
+                <strong>Location</strong>
+                <div class="tiny">Hyderabad, Telangana, India</div>
+                <button class="button-soft" type="button" data-copy="Hyderabad, Telangana, India"
+                  style="margin-top:10px">Copy</button>
+              </div>
+              <div class="contact-box">
+                <div style="font-size:1.5rem;color:var(--primary)"><i data-lucide="mail"></i></div>
+                <strong>Email</strong>
+                <div class="tiny">vedicmathscamp.in@gmail.com</div>
+                <button class="button-soft" type="button" data-copy="vedicmathscamp.in@gmail.com"
+                  style="margin-top:10px">Copy</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
       </div>
     </section>
 
@@ -3274,10 +3307,10 @@
               <i data-lucide="message-circle" style="stroke:#25D366;width:34px;height:34px"></i>
             </div>
             <strong>WhatsApp</strong>
-            <div class="tiny">+91 88862 06105</div>
+            <div class="tiny">+91 94411 55774</div>
             <div class="social-actions">
-              <button class="mini-btn" type="button" data-open="https://wa.me/918886206105">Open</button>
-              <button class="mini-btn" type="button" data-copy="+91 88862 06105">Copy Number</button>
+              <button class="mini-btn" type="button" data-open="https://wa.me/919441155774">Open</button>
+              <button class="mini-btn" type="button" data-copy="+91 94411 55774">Copy Number</button>
             </div>
           </div>
 
@@ -3337,7 +3370,7 @@
     <img id="lightboxImg" class="lightbox-content" src="" alt="Full view" />
   </div>
 
-  <a href="https://wa.me/918886206105?text=Hi%2C+I+want+to+know+about+the+Vedic+Maths+Summer+Camp"
+  <a href="https://wa.me/919441155774?text=Hi%2C+I+want+to+know+about+the+Vedic+Maths+Summer+Camp"
     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i data-lucide="message-circle" style="width:32px;height:32px"></i>
   </a>
@@ -4388,6 +4421,8 @@
         preferredDate: selectedDateText(),
         preferredTime: selectedTimeText(),
         notes: document.getElementById("noteInput").value.trim(),
+        recaptchaResponse: grecaptcha.getResponse(),
+        isNRI: document.getElementById("nriCheck").checked,
         source: "Website Demo Form"
       };
     }
@@ -4412,10 +4447,22 @@
       const lead = buildLead();
 
       // --- Enhanced Validation ---
+      const agreeChecked = document.getElementById("agreeContact").checked;
+      if (!agreeChecked) {
+        showToast("Please agree to be contacted to proceed.");
+        return;
+      }
+
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        showToast("Please complete the reCAPTCHA.");
+        return;
+      }
+
       const required = [
         { val: lead.studentName, msg: "Please enter the student name" },
         { val: lead.parentName, msg: "Please enter the parent/guardian name" },
-        { val: lead.phone, msg: "Please enter a valid phone / WhatsApp number", check: validatePhone },
+        { val: lead.phone, msg: "Please enter a valid phone / WhatsApp number", check: v => lead.isNRI || validatePhone(v) },
         { val: lead.email, msg: "Please enter a valid email address", check: v => v && v.includes("@") },
         { val: lead.city, msg: "Please enter your city/location" }
       ];
@@ -4478,7 +4525,7 @@
           `*City:* ${lead.city}\n` +
           `*Ref:* ${ref}`
         );
-        const waUrl = `https://wa.me/918886206105?text=${waText}`;
+        const waUrl = `https://wa.me/919441155774?text=${waText}`;
 
         const box = document.getElementById("bookingSuccess");
         box.style.display = "block";
