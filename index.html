@@ -1064,7 +1064,8 @@
 
     .carousel-frame {
       position: relative;
-      min-height: 430px;
+      height: 450px;
+      /* Rigid height to prevent layout shifts */
       margin: 16px;
       border-radius: 22px;
       overflow: hidden;
@@ -1077,9 +1078,10 @@
     }
 
     .slide-image {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      /* Ensure images don't stretch but keep container size */
       display: none;
       cursor: zoom-in;
       transition: transform 0.3s ease;
