@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -4218,7 +4218,9 @@
 
       const activeThumb = slideThumbs.querySelector(".thumb.active");
       if (activeThumb) {
-        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        // Use container-specific scroll to avoid moving the entire page
+        const scrollOffset = activeThumb.offsetLeft - (slideThumbs.offsetWidth / 2) + (activeThumb.offsetWidth / 2);
+        slideThumbs.scrollTo({ left: scrollOffset, behavior: 'smooth' });
       }
 
       slideDots.querySelectorAll("[data-dot]").forEach(btn => {
