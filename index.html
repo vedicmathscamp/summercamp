@@ -30,6 +30,9 @@
   <meta property="og:description"
     content="Empower your child with Vedic Mathematics at the International Vedic Maths Council. Boost speed and marks in CBSE/ICSE under Guinness Record mentorship.">
   <meta property="og:image" content="images/ivmc-logo.jpg">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
   <!-- Links & Scripts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -511,13 +514,22 @@
 
     .chip {
       background: #fff;
-      border: 1px solid var(--line);
+      border: 1px solid #dccca3;
       color: var(--secondary);
-      box-shadow: var(--shadow);
-      padding: 10px 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      padding: 10px 14px;
       border-radius: 999px;
       font-size: .88rem;
       font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      background: var(--bg-soft);
+      box-shadow: 0 4px 12px rgba(242, 107, 33, 0.12);
     }
 
     .hero-side {
@@ -753,17 +765,27 @@
     }
 
     .tab-btn {
-      padding: 12px 14px;
+      padding: 12px 18px;
       border-radius: 14px;
-      border: 1px solid var(--line);
+      border: 1px solid #dccca3;
       background: #fff;
       color: var(--secondary);
       font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .tab-btn:hover {
+      background: var(--bg-soft);
+      border-color: var(--primary-2);
+      transform: translateY(-1px);
     }
 
     .tab-btn.active {
       background: linear-gradient(135deg, #fff3ea, #eef7ff);
-      border-color: #f0c6ad;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(242, 107, 33, 0.15);
     }
 
     .tab-panel {
@@ -871,6 +893,26 @@
       align-items: center;
       gap: 10px;
       user-select: none;
+      transition: background 0.2s ease;
+    }
+
+    summary:hover {
+      background: var(--bg-soft);
+    }
+
+    summary::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.2s ease;
+      opacity: 0.6;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
     }
 
     summary::-webkit-details-marker {
@@ -956,17 +998,27 @@
     }
 
     .filter-btn {
-      padding: 11px 13px;
+      padding: 11px 16px;
       border-radius: 12px;
       background: #fff;
-      border: 1px solid var(--line);
+      border: 1px solid #dccca3;
       color: var(--secondary);
       font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .filter-btn:hover {
+      background: var(--bg-soft);
+      border-color: var(--primary-2);
+      transform: translateY(-1px);
     }
 
     .filter-btn.active {
       background: linear-gradient(135deg, #fff3ea, #eef7ff);
-      border-color: #f0c4aa;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(242, 107, 33, 0.15);
     }
 
     .sutra-grid {
@@ -1795,8 +1847,13 @@
     }
 
     @keyframes scroll-vertical {
-      from { transform: translateY(0); }
-      to { transform: translateY(-50%); }
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-50%);
+      }
     }
 
     /* Keep grid on desktop for non-marquee fallback if needed, 
@@ -2118,11 +2175,11 @@
           </div>
 
           <div class="chip-row">
-            <span class="chip">CBSE Chapter Mapping</span>
-            <span class="chip">ICSE Chapter Mapping</span>
-            <span class="chip">Science Numerical Support</span>
-            <span class="chip">Commerce & Data Confidence</span>
-            <span class="chip">Future Competitive Exam Readiness</span>
+            <span class="chip"><i data-lucide="book-check" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"></i> CBSE Chapter Mapping</span>
+            <span class="chip"><i data-lucide="book-check" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"></i> ICSE Chapter Mapping</span>
+            <span class="chip"><i data-lucide="zap" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"></i> Science Numerical Support</span>
+            <span class="chip"><i data-lucide="trending-up" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"></i> Commerce & Data Confidence</span>
+            <span class="chip"><i data-lucide="graduation-cap" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"></i> Future Competitive Exam Readiness</span>
           </div>
 
           <div class="stats-grid" style="margin-top:18px">
@@ -2338,7 +2395,7 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">What many children are missing today</span>
-            <h3>The missing tool is not intelligence — it is fast, clear number handling</h3>
+            <h3>Fast calculations aren't just for 'Genius' kids — they're for every child with the right tools.</h3>
           </div>
           <p>
             Many children do not lose marks because they cannot understand a concept.
@@ -2677,7 +2734,7 @@
         <div class="section-head">
           <div>
             <span class="eyebrow"><i data-lucide="book" style="width:16px;height:16px"></i> CBSE Advantage</span>
-            <h3>Building CBSE Excellence with Vedic Maths Pro</h3>
+            <h3>Building CBSE Excellence with International Vedic Maths Council</h3>
           </div>
           <p>
             Vedic Mathematics translates directly into higher marks and faster completion times for CBSE students.
@@ -2974,7 +3031,8 @@
           <div class="testimonial-grid">
             <!-- First Set -->
             <div class="testimonial-card">
-              <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu chala
+              <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu
+                chala
                 fast ga chesthunnadu. Chala bagundi!"</p>
               <div class="testimonial-author">
                 <div class="author-info"><strong>Mrs. Kavitha</strong><small>Hyderabad (DPS)</small></div>
@@ -2994,7 +3052,8 @@
               </div>
             </div>
             <div class="testimonial-card">
-              <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge. Bagundi,
+              <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge.
+                Bagundi,
                 definitely try cheyandi."</p>
               <div class="testimonial-author">
                 <div class="author-info"><strong>P. Satyavathi</strong><small>Vijayawada</small></div>
@@ -3029,7 +3088,8 @@
               </div>
             </div>
             <div class="testimonial-card">
-              <p>"For students at Jamnabai Narsee, speed is vital. These sutras are perfect. Professional and engaging!"
+              <p>"For students at Jamnabai Narsee, speed is vital. These methods are perfect. Professional and
+                engaging!"
               </p>
               <div class="testimonial-author">
                 <div class="author-info"><strong>Dr. Priya V.</strong><small>Mumbai</small></div>
@@ -3079,7 +3139,8 @@
 
             <!-- Second Set for Seamless Loop -->
             <div class="testimonial-card">
-              <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu chala
+              <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu
+                chala
                 fast ga chesthunnadu. Chala bagundi!"</p>
               <div class="testimonial-author">
                 <div class="author-info"><strong>Mrs. Kavitha</strong><small>Hyderabad (DPS)</small></div>
@@ -3099,7 +3160,8 @@
               </div>
             </div>
             <div class="testimonial-card">
-              <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge. Bagundi,
+              <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge.
+                Bagundi,
                 definitely try cheyandi."</p>
               <div class="testimonial-author">
                 <div class="author-info"><strong>P. Satyavathi</strong><small>Vijayawada</small></div>
@@ -3134,7 +3196,8 @@
               </div>
             </div>
             <div class="testimonial-card">
-              <p>"For students at Jamnabai Narsee, speed is vital. These sutras are perfect. Professional and engaging!"
+              <p>"For students at Jamnabai Narsee, speed is vital. These methods are perfect. Professional and
+                engaging!"
               </p>
               <div class="testimonial-author">
                 <div class="author-info"><strong>Dr. Priya V.</strong><small>Mumbai</small></div>
@@ -3225,7 +3288,7 @@
               <li class="batch-item"><span>April 24 – April 30</span> <span class="status-open">Open</span></li>
               <li class="batch-item"><span>May 5 – May 30</span> <span class="status-open">Batches Open</span></li>
             </ul>
-            <div style="margin-top:15px"><strong>Fee: ₹1,999</strong> <small>(Early Bird)</small></div>
+            <div style="margin-top:15px"><strong>Course Fees & Details:</strong> Discussed during Demo</div>
           </div>
 
           <div class="level-card">
@@ -3239,7 +3302,7 @@
               <li class="batch-item"><span>April 24 – April 30</span> <span class="status-open">Open</span></li>
               <li class="batch-item"><span>May 5 – May 30</span> <span class="status-open">Batches Open</span></li>
             </ul>
-            <div style="margin-top:15px"><strong>Fee: ₹1,999</strong> <small>(Early Bird)</small></div>
+            <div style="margin-top:15px"><strong>Course Fees & Details:</strong> Discussed during Demo</div>
           </div>
 
           <div class="level-card locked">
@@ -3264,7 +3327,7 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">🗓️ Book a Free Demo</span>
-            <h3>Securely Book Your Seat</h3>
+            <h3>Claim Your Free Demo Seat</h3>
           </div>
           <p>
             Experience the power of Vedic Mathematics. Confirm your preferred slot below.
@@ -3381,8 +3444,8 @@
           </div>
 
           <button class="button yellow-button" type="button" id="confirmBooking"
-            style="width:100%; margin-top:8px; font-weight: 800; font-size: 1.2rem; padding: 18px;">Get FREE Trial
-            Class</button>
+            style="width:100%; margin-top:8px; font-weight: 800; font-size: 1.2rem; padding: 18px;">Claim Your FREE
+            Trial Class</button>
           <div class="success" id="bookingSuccess"></div>
         </div>
 
@@ -3624,6 +3687,10 @@
       {
         q: "Do you provide certificates and study material?",
         a: "Yes. Every student receives a Lifetime Sutra Guide PDF, curated practice worksheets, and a Certificate of Completion upon finishing the course."
+      },
+      {
+        q: "What happens after the 7-day Summer Camp?",
+        a: "The camp is a foundational breakthrough. After completion, students can continue with our structured Level-2 and Level-3 programs to master higher algebra, geometry, and competitive exam strategies. We ensure a continuous learning path for every child."
       }
     ];
 
@@ -4130,14 +4197,14 @@
     ];
 
     const sutraFilters = [
-      { key: "all", label: "All" },
-      { key: "maths", label: "Maths" },
-      { key: "physics", label: "Physics" },
-      { key: "chemistry", label: "Chemistry" },
-      { key: "commerce", label: "Commerce" },
-      { key: "social", label: "Social" },
-      { key: "study", label: "Study Skills" },
-      { key: "future", label: "Future Exams" }
+      { key: "all", label: "All", icon: "layout-grid" },
+      { key: "maths", label: "Maths", icon: "binary" },
+      { key: "physics", label: "Physics", icon: "zap" },
+      { key: "chemistry", label: "Chemistry", icon: "beaker" },
+      { key: "commerce", label: "Commerce", icon: "trending-up" },
+      { key: "social", label: "Social", icon: "users" },
+      { key: "study", label: "Study Skills", icon: "book-open" },
+      { key: "future", label: "Future Exams", icon: "graduation-cap" }
     ];
 
     let activeSutraFilter = "all";
@@ -4148,9 +4215,12 @@
     function renderSutraFilters() {
       filtersWrap.innerHTML = sutraFilters.map(f => `
         <button class="filter-btn ${activeSutraFilter === f.key ? "active" : ""}" type="button" data-filter="${f.key}">
+          <i data-lucide="${f.icon}" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"></i>
           ${f.label}
         </button>
       `).join("");
+
+      lucide.createIcons();
 
       filtersWrap.querySelectorAll("[data-filter]").forEach(btn => {
         btn.addEventListener("click", () => {
