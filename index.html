@@ -1773,13 +1773,41 @@
       fill: currentColor;
     }
 
-    /* Testimonials & Curriculum Styles */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
+    /* Testimonials & Vertical Marquee */
+    .testimonial-scroll-area {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
       margin-top: 30px;
+      mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
     }
+
+    .testimonial-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      animation: scroll-vertical 60s linear infinite;
+    }
+
+    .testimonial-grid:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-vertical {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50%); }
+    }
+
+    /* Keep grid on desktop for non-marquee fallback if needed, 
+       but here we want vertical scrolling regardless */
+    @media (min-width: 768px) {
+      .testimonial-card {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+
 
     .testimonial-card {
       background: #fff;
@@ -2809,7 +2837,7 @@
       </div>
     </section>
 
-   <!--
+    <!--
     <section id="demo-video" class="section compact" style="background:#f9f9f9">
       <div class="wrap">
         <div class="section-head" style="text-align:center;align-items:center">
@@ -2942,108 +2970,216 @@
           </div>
           <p>Real feedback from families whose children have attended our Vedic Maths workshops and summer camps.</p>
         </div>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu chala
-              fast ga chesthunnadu. Chala bagundi!"</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Mrs. Kavitha</strong><small>Hyderabad (DPS)</small></div>
+        <div class="testimonial-scroll-area">
+          <div class="testimonial-grid">
+            <!-- First Set -->
+            <div class="testimonial-card">
+              <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu chala
+                fast ga chesthunnadu. Chala bagundi!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Mrs. Kavitha</strong><small>Hyderabad (DPS)</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"My daughter studies at Timphany School (Vizag). She was always scared of divisions. After the course,
-              her confidence is next level!"</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Rao Garu</strong><small>Visakhapatnam</small></div>
+            <div class="testimonial-card">
+              <p>"My daughter studies at Timphany School (Vizag). She was always scared of divisions. After the course,
+                her confidence is next level!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Rao Garu</strong><small>Visakhapatnam</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Even for St. Gabriel's students, this is a game changer. Maababuki concept clear ga ardam ayindi."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Srinivas Reddy</strong><small>Warangal</small></div>
+            <div class="testimonial-card">
+              <p>"Even for St. Gabriel's students, this is a game changer. Maababuki concept clear ga ardam ayindi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Srinivas Reddy</strong><small>Warangal</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge. Bagundi,
-              definitely try cheyandi."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>P. Satyavathi</strong><small>Vijayawada</small></div>
+            <div class="testimonial-card">
+              <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge. Bagundi,
+                definitely try cheyandi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>P. Satyavathi</strong><small>Vijayawada</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"My son at Presidency High School needed better calculation habits. This camp provided exactly that.
-              Natural language and easy explaining."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Anil Kumar</strong><small>Nizamabad</small></div>
+            <div class="testimonial-card">
+              <p>"My son at Presidency High School needed better calculation habits. This camp provided exactly that.
+                Natural language and easy explaining."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Anil Kumar</strong><small>Nizamabad</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"My child is in Vignan School. Shortcut methods are amazing. Maths ante bhayam poindi. Thanks to the
-              team."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>S. Venkat</strong><small>Guntur</small></div>
+            <div class="testimonial-card">
+              <p>"My child is in Vignan School. Shortcut methods are amazing. Maths ante bhayam poindi. Thanks to the
+                team."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>S. Venkat</strong><small>Guntur</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Even for kids at Bhartiya Vidya Bhavan, these techniques are new. Dr. Sai Kiran's Guinness Record is
-              visible in his quality."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>K. Radhika</strong><small>Tirupati</small></div>
+            <div class="testimonial-card">
+              <p>"Even for kids at Bhartiya Vidya Bhavan, these techniques are new. Dr. Sai Kiran's Guinness Record is
+                visible in his quality."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>K. Radhika</strong><small>Tirupati</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"My son at Inventure Academy joined the online batch. Bahut achha laga to see him calculate 5-digit
-              squares mentally!"</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Amit K.</strong><small>Bengaluru</small></div>
+            <div class="testimonial-card">
+              <p>"My son at Inventure Academy joined the online batch. Bahut achha laga to see him calculate 5-digit
+                squares mentally!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Amit K.</strong><small>Bengaluru</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"For students at Jamnabai Narsee, speed is vital. These sutras are perfect. Professional and engaging!"
-            </p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Dr. Priya V.</strong><small>Mumbai</small></div>
+            <div class="testimonial-card">
+              <p>"For students at Jamnabai Narsee, speed is vital. These sutras are perfect. Professional and engaging!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Dr. Priya V.</strong><small>Mumbai</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Daughter studies at Sanskriti School. Algebra course helped her clear basics beautifully. Highly
-              professional!"</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Meena Sharma</strong><small>Delhi</small></div>
+            <div class="testimonial-card">
+              <p>"Daughter studies at Sanskriti School. Algebra course helped her clear basics beautifully. Highly
+                professional!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Meena Sharma</strong><small>Delhi</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"At Harvest Public School, competition is high. This gave my son the 'extra marks' advantage. Chala
-              helpful ga undi."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>G. Venkatesh</strong><small>Khammam</small></div>
+            <div class="testimonial-card">
+              <p>"At Harvest Public School, competition is high. This gave my son the 'extra marks' advantage. Chala
+                helpful ga undi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>G. Venkatesh</strong><small>Khammam</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Even online, it felt like he was sitting next to her. Maa ammayiki chala confidence vachindi."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>T. Srinivas</strong><small>Rajahmundry</small></div>
+            <div class="testimonial-card">
+              <p>"Even online, it felt like he was sitting next to her. Maa ammayiki chala confidence vachindi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>T. Srinivas</strong><small>Rajahmundry</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Twins studying at Aditya School. Sibling discount was great, training was even better. Both competing
-              for speed!"</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>Sravani P.</strong><small>Kakinada</small></div>
+            <div class="testimonial-card">
+              <p>"Twins studying at Aditya School. Sibling discount was great, training was even better. Both competing
+                for speed!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Sravani P.</strong><small>Kakinada</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Maths was a nightmare for my son at LRG School. Now he calls it 'Vedic Fun'. Chala happy ga unnam with
-              results."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>B. Narasimha</strong><small>Anantapur</small></div>
+            <div class="testimonial-card">
+              <p>"Maths was a nightmare for my son at LRG School. Now he calls it 'Vedic Fun'. Chala happy ga unnam with
+                results."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>B. Narasimha</strong><small>Anantapur</small></div>
+              </div>
             </div>
-          </div>
-          <div class="testimonial-card">
-            <p>"Best for Paramita High School students aiming for Olympiads. Mental math is the cornerstone of
-              competitive exams."</p>
-            <div class="testimonial-author">
-              <div class="author-info"><strong>M. Rajesh</strong><small>Karimnagar</small></div>
+            <div class="testimonial-card">
+              <p>"Best for Paramita High School students aiming for Olympiads. Mental math is the cornerstone of
+                competitive exams."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>M. Rajesh</strong><small>Karimnagar</small></div>
+              </div>
+            </div>
+
+            <!-- Second Set for Seamless Loop -->
+            <div class="testimonial-card">
+              <p>"Dr. Sai Kiran garu's magic works! My son at DPS Kukatpally used to take hours for homework. Ippudu chala
+                fast ga chesthunnadu. Chala bagundi!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Mrs. Kavitha</strong><small>Hyderabad (DPS)</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"My daughter studies at Timphany School (Vizag). She was always scared of divisions. After the course,
+                her confidence is next level!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Rao Garu</strong><small>Visakhapatnam</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Even for St. Gabriel's students, this is a game changer. Maababuki concept clear ga ardam ayindi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Srinivas Reddy</strong><small>Warangal</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Speed calculations are key for NSM Public School syllabus. The 7-day course gave her the edge. Bagundi,
+                definitely try cheyandi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>P. Satyavathi</strong><small>Vijayawada</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"My son at Presidency High School needed better calculation habits. This camp provided exactly that.
+                Natural language and easy explaining."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Anil Kumar</strong><small>Nizamabad</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"My child is in Vignan School. Shortcut methods are amazing. Maths ante bhayam poindi. Thanks to the
+                team."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>S. Venkat</strong><small>Guntur</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Even for kids at Bhartiya Vidya Bhavan, these techniques are new. Dr. Sai Kiran's Guinness Record is
+                visible in his quality."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>K. Radhika</strong><small>Tirupati</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"My son at Inventure Academy joined the online batch. Bahut achha laga to see him calculate 5-digit
+                squares mentally!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Amit K.</strong><small>Bengaluru</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"For students at Jamnabai Narsee, speed is vital. These sutras are perfect. Professional and engaging!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Dr. Priya V.</strong><small>Mumbai</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Daughter studies at Sanskriti School. Algebra course helped her clear basics beautifully. Highly
+                professional!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Meena Sharma</strong><small>Delhi</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"At Harvest Public School, competition is high. This gave my son the 'extra marks' advantage. Chala
+                helpful ga undi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>G. Venkatesh</strong><small>Khammam</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Even online, it felt like he was sitting next to her. Maa ammayiki chala confidence vachindi."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>T. Srinivas</strong><small>Rajahmundry</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Twins studying at Aditya School. Sibling discount was great, training was even better. Both competing
+                for speed!"</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>Sravani P.</strong><small>Kakinada</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Maths was a nightmare for my son at LRG School. Now he calls it 'Vedic Fun'. Chala happy ga unnam with
+                results."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>B. Narasimha</strong><small>Anantapur</small></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p>"Best for Paramita High School students aiming for Olympiads. Mental math is the cornerstone of
+                competitive exams."</p>
+              <div class="testimonial-author">
+                <div class="author-info"><strong>M. Rajesh</strong><small>Karimnagar</small></div>
+              </div>
             </div>
           </div>
         </div>
